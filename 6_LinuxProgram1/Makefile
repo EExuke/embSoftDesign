@@ -87,12 +87,10 @@ ${CFILES}/ex_6_31/libmydll.so: ${CFILES}/ex_6_31/sub.c
 ex_6_31: ${CFILES}/ex_6_31/main.c
 	gcc ${CFILES}/ex_6_31/main.c -o ex_6_31 -lmydll -ldl -Wall
 
+#目标文件移动到 ./obj 目录下
+	mv ./ex_6_* ./obj/
+
 clean:
-	sudo rm ex_6_1 ex_6_2 ex_6_3 ex_6_4 ex_6_5 \
-	        ex_6_6 ex_6_7 ex_6_8 ex_6_9 ex_6_10 \
-	        ex_6_11 ex_6_12 ex_6_13 ex_6_14 ex_6_15 \
-	        ex_6_16 ex_6_17 ex_6_18 ex_6_19 ex_6_20 \
-	        ex_6_21 ex_6_22 ex_6_23 ex_6_24 ex_6_25 \
-	        ex_6_26 ex_6_27 ex_6_28 ex_6_29 \
-	        ex_6_30 ${CFILES}/ex_6_30/*.o ${CFILES}/ex_6_30/*.a\
-	        ex_6_31 /lib/libmydll.so
+	rm ./obj/ex_6_*
+	rm ${CFILES}/ex_6_30/*.o ${CFILES}/ex_6_30/*.a
+	sudo rm /lib/libmydll.so

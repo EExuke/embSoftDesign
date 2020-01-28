@@ -31,8 +31,8 @@ ex_5_12: ${CFILES}/ex_5_12.c
 	gcc ${CFILES}/ex_5_12.c -o ex_5_12
 ex_5_13: ${CFILES}/ex_5_13.c
 	gcc ${CFILES}/ex_5_13.c -o ex_5_13
+#目标文件移动到./obj 目录下
+	mv ./ex_5_* ./obj/
 
 clean:
-	rm ex_5_1 ex_5_2 ex_5_3 ex_5_4 ex_5_5 \
-	   ex_5_7 ex_5_8 ex_5_9 ex_5_10 \
-	   ex_5_11 ex_5_12 ex_5_13
+	rm ./obj/ex_5_*
