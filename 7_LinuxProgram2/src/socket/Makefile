@@ -4,6 +4,7 @@ Object = server1 client1 \
 		 server2 client2 \
 		 server3 client3 \
 		 server4 client4 \
+		 server5 client5 \
 		 getdate
 
 .PHONY: all
@@ -26,10 +27,14 @@ server4: ${CFDIR}/server4.c
 	gcc ${CFDIR}/server4.c -o server4
 client4: ${CFDIR}/client4.c
 	gcc ${CFDIR}/client4.c -o client4
+server5: ${CFDIR}/server5.c
+	gcc ${CFDIR}/server5.c -pthread -o server5
+client5: ${CFDIR}/client5.c
+	gcc ${CFDIR}/client5.c -pthread -o client5
 getdate: ${CFDIR}/getdate.c
 	gcc ${CFDIR}/getdate.c -o getdate
 
-	mv ${Object} ./obj
+	@mv ${Object} ./obj
 
 clean:
 	rm ./obj/*
