@@ -57,6 +57,7 @@ int main()
 	{
 		printf("server waiting\n");
 		client_len = sizeof(client_address);
+		/* 建立通信套接字 */
 		client_sockfd[i] = accept(server_sockfd, (struct sockaddr *)&client_address, &client_len);
 		if (client_sockfd[i] == -1)
 		{

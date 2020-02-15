@@ -5,6 +5,7 @@ Object = server1 client1 \
 		 server3 client3 \
 		 server4 client4 \
 		 server5 client5 \
+		 udp_server udp_client \
 		 getdate
 
 .PHONY: all
@@ -31,6 +32,10 @@ server5: ${CFDIR}/server5.c
 	gcc ${CFDIR}/server5.c -pthread -o server5
 client5: ${CFDIR}/client5.c
 	gcc ${CFDIR}/client5.c -pthread -o client5
+udp_server: ${CFDIR}/udp_server.c
+	gcc ${CFDIR}/udp_server.c -o udp_server
+udp_client: ${CFDIR}/udp_client.c
+	gcc ${CFDIR}/udp_client.c -o udp_client
 getdate: ${CFDIR}/getdate.c
 	gcc ${CFDIR}/getdate.c -o getdate
 

@@ -53,6 +53,7 @@ int main()
 		char ch;
 		printf("server waiting\n");
 		client_len = sizeof(client_address);
+		/* 建立通信套接字 */
 		client_sockfd = accept(server_sockfd, (struct sockaddr *)&client_address, &client_len);
 		read(client_sockfd, &ch, 1);
 		ch++;
