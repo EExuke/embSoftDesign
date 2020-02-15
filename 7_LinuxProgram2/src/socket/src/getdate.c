@@ -15,7 +15,7 @@
  *     FILE DESCRIPTION       : 连接到主机的标准服务,需要打开相应的服务;
  *                            : 这里的daytime服务默认是关闭的，所以需要打开：
  *                            ：sudo vim /etc/xinetd.d/daytime 将其中的disable的值改为no.
- *                            : 再重启xinetd服务：sudo vim /etc/xinetd.d/daytime
+ *                            : 再重启xinetd服务：sudo /etc/init.d/xinetd restart
 ** ************************************************************************** */
 
 #include <stdio.h>
